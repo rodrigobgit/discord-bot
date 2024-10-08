@@ -1549,6 +1549,10 @@
 		"name": "Heatran",
 		"attacks": ["Metal Sound", "Lava Plume", "Crunch", "Iron Head"],
 		"level": 70,
+		"desperation": {
+			"move": "Heat Wave",
+			"timing": "once"
+		},
 		"ability": "Pressure"
 	},
 	{
