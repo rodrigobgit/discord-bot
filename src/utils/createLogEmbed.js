@@ -37,6 +37,9 @@ async function getAuthor(action) {
 		case "MessageDelete":
 			author = { name: action.value.author.username, iconURL: action.value.author.avatarURL() };
 			break;
+		case "GuildMember":
+			author = { name: action.value.user.username, iconURL: action.value.user.avatarURL() };
+			break;
 		default:
 			return "Unknown";
 	}
