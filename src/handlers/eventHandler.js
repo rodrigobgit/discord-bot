@@ -6,10 +6,10 @@ module.exports = (client) => {
 	eventFolders.forEach((folder) => {
 		const eventFiles = getDirFilePath(folder);
 		const eventName = folder.replace(/\\/g, "/").split("/").pop();
-		client.on(eventName, async (arg) => {
+		client.on(eventName, async (...arg) => {
 			for (const file of eventFiles) {
 				const eventFunction = require(file);
-				await eventFunction(client, arg);
+				await eventFunction(client, ...arg);
 			}
 		});
 	});
