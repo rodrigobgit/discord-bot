@@ -18,8 +18,8 @@ module.exports = (client, oldState, newState) => {
 				stateChange = "Switched";
 				description = `${stateChange} from <#${oldState.channelId}> to <#${newState.channelId}>`;
 			}
+			createLogEmbed(action, fieldsToAdd, description);
 		}
-		createLogEmbed(action, fieldsToAdd, description);
 	} catch (error) {
 		console.error(error.message);
 	}
