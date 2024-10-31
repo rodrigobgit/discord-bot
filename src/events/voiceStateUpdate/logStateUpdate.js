@@ -1,10 +1,10 @@
 const createLogEmbed = require("../../utils/createLogEmbed");
 module.exports = (client, oldState, newState) => {
 	try {
-		const fieldsToAdd = [];
-		let description;
-		const action = { type: "VoiceStateUpdate", value: newState };
 		if (oldState.channelId !== newState.channelId) {
+			const fieldsToAdd = [];
+			let description;
+			const action = { type: "VoiceStateUpdate", value: newState };
 			let stateChange;
 			if (oldState.channelId === null && newState.channelId !== null) {
 				stateChange = "Joined";
